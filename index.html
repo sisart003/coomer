@@ -4,9 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    
+<body class="overflow-x-hidden">
+    <header id="toggle-menu" class="bg-sky-950 w-screen text-white h-16 overflow-hidden fixed">
+        <nav class="w-full px-2">
+            <div class="flex justify-between items-center p-4 text-2xl">
+                <h2 class="font-bold "><i class="fa-solid fa-poo"></i> Coomer</h2>
+                <div id="bars">
+                    <i class="fa-solid fa-bars open-icon cursor-pointer"></i>
+                    <!-- <i class="fa-solid fa-xmark"></i> -->
+                </div>
+            </div>
+            <ul class="text-xl">
+                <li class="py-2">
+                    <a href="#">Creators</a>
+                </li>
+                <li class="py-2">
+                    <a href="#">Post</a>
+                </li>
+                <li class="py-2">
+                    <a href="#">Importer</a>
+                </li>
+                <li class="py-2">
+                    <a href="#">Account</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        
+        const bars = document.querySelector('#bars');
+        const menuIcon = document.querySelector('.open-icon')
+
+        bars.addEventListener('click', () => {
+            const toggleMenu = document.querySelector('#toggle-menu');
+            toggleMenu.classList.toggle('overflow-hidden')
+            toggleMenu.classList.toggle('h-16')
+            if(menuIcon.classList.contains('fa-bars')){
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark')
+            }else{
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars')
+            }
+        })
+    </script>
 </body>
 </html>
